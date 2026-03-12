@@ -1,0 +1,476 @@
+/* ===============================
+    GLOBAL STYLES
+==================================*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #0a0f1f; /* Deep navy background */
+    color: #e3e8f4;
+    line-height: 1.6;
+}
+
+/* --- Base Typography --- */
+h2 {
+    color: #8be9fd; /* Light blue/cyan color for headings */
+    border-bottom: 2px solid #8be9fd;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+/* ===============================
+    HEADER (Desktop Base Styles)
+==================================*/
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background: #11172a;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
+    /* Essential for mobile menu: makes header stick to top */
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100; /* Ensure header is on top */
+}
+
+/* ----- Logo ----- */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    font-size: 1.6rem;
+    background: linear-gradient(90deg, #00d9ff, #8263ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.logo img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #00d9ff;
+}
+
+/* ----- Navigation (Desktop) ----- */
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #cdd6f4;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.nav a:hover,
+.nav a.active {
+    color: #7afcff;
+}
+
+/* ----- Social Icons (Desktop) ----- */
+.social-icons ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    padding: 0;
+}
+
+.social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    color: #fff;
+    background: linear-gradient(135deg, #00d9ff, #8263ff);
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 217, 255, 0.2);
+}
+
+.social-icons a:hover {
+    transform: scale(1.15) translateY(-3px);
+    box-shadow: 0 0 15px rgba(0, 217, 255, 0.5);
+    background: linear-gradient(135deg, #8263ff, #00d9ff);
+}
+
+/* ----- Mobile Menu Toggle (Initially Hidden on Desktop) ----- */
+.menu-toggle {
+    display: none; 
+    border: none;
+    background: transparent;
+    color: #7afcff;
+    font-size: 1.8rem;
+    cursor: pointer;
+    z-index: 150; /* Needs to be highest to be clickable */
+}
+
+/* ===============================
+    RESUME LAYOUT
+==================================*/
+
+.resume-content {
+    /* Set up a container for the resume */
+    max-width: 1000px;
+    /* Added top margin to account for fixed header height */
+    margin: 120px auto 40px auto; 
+    padding: 20px;
+    background-color: #1a1a2e; /* Dark background matching the example */
+    color: #ffffff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+.resume-section {
+    padding: 20px 0;
+}
+
+.divider {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 20px 0;
+}
+
+/* --- Hero Section Styling (Top Header) --- */
+
+.hero-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Aligned to start to look better with photo */
+    padding: 0 20px 20px 20px;
+}
+
+/* ----- Profile Photo (Right) ----- */
+.profile-photo {
+    flex: 0 0 310px; /* Fixed width on desktop */
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center;
+}
+
+.profile-photo img {
+    width: 310px;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 60%;
+    padding: 5px;
+    background: linear-gradient(135deg, #00d9ff, #8263ff);
+    box-shadow: 0 0 25px rgba(0, 217, 255, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-photo img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px rgba(0, 217, 255, 0.5);
+}
+
+.hero-main-info h1 {
+    font-size: 2.5em;
+    margin: 0;
+    background: linear-gradient(10deg, #00d9ff,#bd93f9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-main-info .title {
+    font-size: 1.2em;
+    color: #ff79c6; /* Pink accent for the title */
+    margin: 5px 0 15px 0;
+    font-weight: 600;
+}
+
+.hero-main-info .summary {
+    max-width: 600px;
+    line-height: 1.6;
+    color: #bd93f9; /* Purple accent for text */
+}
+
+.hero-contact-info ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.hero-contact-info li {
+    padding: 5px 0;
+    font-size: 0.9em;
+}
+
+.hero-contact-info i {
+    margin-right: 10px;
+    color: #f1fa8c; /* Yellow accent for icons */
+}
+
+/* --- Experience & Education/Certification Styling --- */
+
+.job-entry, .education-entry {
+    margin-bottom: 15px;
+}
+
+.job-header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    color: #f1fa8c;
+}
+
+.job-entry ul {
+    list-style: disc;
+    margin: 5px 0 0 20px;
+    padding: 0;
+}
+
+.company, .institution, .degree {
+    font-style: italic;
+    margin: 3px 0;
+}
+
+/* Two-column layout for Education and Certification */
+.education-certification-group {
+    display: flex;
+    gap: 40px;
+}
+
+.education-section, .certification-section {
+    flex: 1;
+}
+
+.certification-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.certification-section li:before {
+    content: "•";
+    color: #50fa7b; /* Green accent */
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+/* ===============================
+    SKILL PROFICIENCY BARS
+==================================*/
+.skills-section {
+    padding: 20px;
+    background-color: #282a36; /* Slightly lighter dark background for this block */
+    border-radius: 8px;
+}
+
+.skill-bar-item {
+    margin-bottom: 25px;
+}
+
+.skill-name {
+    font-weight: 600;
+    font-size: 1.1em;
+    margin-bottom: 5px;
+    display: block;
+    color: #8be9fd;
+}
+
+.progress-bar-container {
+    background-color: #44475a; /* Grey background for the bar track */
+    border-radius: 5px;
+    overflow: hidden;
+    height: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.progress-bar {
+    height: 100%;
+    transition: width 1s ease-out;
+}
+
+.skill-percent {
+    margin-left: 10px;
+    font-weight: 600;
+}
+
+/* ----- Skill Bar Colors ----- */
+.progress-bar.html, .progress-bar.css {
+    background: linear-gradient(90deg, #50fa7b, #50fa7b); /* Green gradient */
+}
+
+.progress-bar.php {
+    background: linear-gradient(90deg, #ffb86c, #ffb86c); /* Orange gradient */
+}
+
+.progress-bar.javascript {
+    background: linear-gradient(90deg, #ff5555, #ff5555); /* Red gradient */
+}
+
+/* ----- Other Skills List ----- */
+.other-skills h3 {
+    color: #f1fa8c;
+    margin-top: 30px;
+    border-bottom: 1px solid #44475a;
+    padding-bottom: 5px;
+}
+
+.other-skills ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.other-skills li {
+    margin-bottom: 5px;
+    color: #bd93f9;
+}
+
+/* ===============================
+    FOOTER
+==================================*/
+footer {
+    background: hsl(226, 42%, 12%); /* Dark background, similar to header/sections */
+    text-align: center;
+    padding: 20px;
+    color: #8fa0c5;
+    font-size: 0.9rem;
+}
+
+/* ===============================
+    RESPONSIVE DESIGN (Mobile - 768px and below)
+==================================*/
+@media (max-width: 768px) {
+    /* HEADER: Mobile Menu Setup */
+    .header {
+        padding: 15px 5%;
+    }
+
+    /* 1. Show the menu toggle button (the "bar") */
+    .menu-toggle {
+        display: block; 
+    }
+    
+    /* 2. Hide desktop navigation and turn it into a full-screen mobile menu */
+    .nav {
+        position: fixed; 
+        top: 0;
+        left: -100%; 
+        width: 100%;
+        height: 100vh;
+        background: #11172a; 
+        transition: left 0.4s ease;
+        z-index: 99; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px; 
+    }
+
+    .nav a {
+        font-size: 1.8rem;
+    }
+    
+    /* Hide social icons to clean up the main header space */
+    .social-icons {
+        display: none; 
+    }
+    
+    /* 3. The class applied by JavaScript to show the menu */
+    .nav.show-menu {
+        left: 0; /* Slide the menu into view */
+    }
+
+    /* --- RESUME CONTENT RESPONSIVENESS --- */
+    
+    .resume-content {
+        margin-top: 80px; /* Reduced top margin for smaller screens */
+        padding: 15px;
+    }
+
+    /* Hero Section: Stack content vertically AND center all items */
+    .hero-section {
+        flex-direction: column;
+        padding: 0 0 20px 0;
+        text-align: center;
+        /* Add align-items: center to horizontally center flex items when flex-direction is column */
+        align-items: center; 
+    }
+
+    /* Move profile photo to the top and ensure it's centered */
+    .profile-photo {
+        order: -1; /* Place it before hero-main-info */
+        flex: none;
+        /* Ensure the photo container centers its content (the image) */
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .profile-photo img {
+        width: 200px; /* Smaller photo for mobile */
+        height: 200px;
+    }
+
+    .hero-main-info h1 {
+        font-size: 2em;
+    }
+
+    .hero-main-info .summary {
+        max-width: 100%;
+    }
+    
+    /* Contact Info: Align center and reduce size (Ensure list items are also centered) */
+    .hero-contact-info ul {
+        margin-top: 20px;
+        /* Add text-align: center here too, even if parent has it, for consistency */
+        text-align: center; 
+    }
+    
+    .hero-contact-info li {
+        text-align: center;
+        font-size: 1em;
+        /* Use flex on li to center the icon and text together */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    /* Experience Section */
+    .job-header {
+        flex-direction: column; /* Stack title and date */
+        align-items: flex-start;
+    }
+    
+    .job-date {
+        margin-top: 5px;
+        font-size: 0.9em;
+        font-weight: 400;
+        color: #cdd6f4;
+    }
+
+    /* Education & Certification: Stack content vertically */
+    .education-certification-group {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .education-section h2, 
+    .certification-section h2 {
+        margin-top: 10px;
+    }
+}

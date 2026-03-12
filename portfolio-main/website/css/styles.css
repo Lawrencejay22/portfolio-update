@@ -1,0 +1,386 @@
+/* ===============================
+    GLOBAL STYLES
+==================================*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #0a0f1f; /* Deep navy background */
+    color: #e3e8f4;
+    line-height: 1.6;
+}
+
+/* ===============================
+    HEADER (Desktop Base Styles)
+==================================*/
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background: #11172a;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
+    /* ESSENTIAL FIX: Make header fixed and ensure it's on top */
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+/* ----- Logo ----- */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    font-size: 1.6rem;
+    background: linear-gradient(90deg, #00d9ff, #8263ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.logo img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #00d9ff;
+}
+
+/* ----- Navigation (Desktop) ----- */
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #cdd6f4;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.nav a:hover,
+.nav a.active {
+    color: #7afcff;
+}
+
+/* ----- Social Icons ----- */
+.social-icons ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    padding: 0;
+}
+
+.social-icons li {
+    display: inline-block;
+}
+
+.social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    color: #fff;
+    background: linear-gradient(135deg, #00d9ff, #8263ff);
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 217, 255, 0.2);
+}
+
+.social-icons a:hover {
+    transform: scale(1.15) translateY(-3px);
+    box-shadow: 0 0 15px rgba(0, 217, 255, 0.5);
+    background: linear-gradient(135deg, #8263ff, #00d9ff);
+}
+
+/* ----- Mobile Menu Button (Hidden on Desktop) ----- */
+.menu-toggle {
+    display: none; 
+    border: none;
+    background: transparent;
+    color: #7afcff;
+    font-size: 1.8rem;
+    cursor: pointer;
+    z-index: 150; /* Above the header */
+}
+
+/* ===============================
+    HERO SECTION
+==================================*/
+.hero {
+    /* Added top padding to account for the fixed header */
+    padding-top: 100px; 
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    flex-wrap: wrap;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 100px;
+    background-color: #0a0f1f;
+    gap: 60px;
+}
+
+/* ----- Intro Text ----- */
+.intro-text {
+    flex: 1;
+    max-width: 50%;
+}
+
+.intro-text h1 span {
+    background: linear-gradient(90deg, #00d9ff, #8263ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.intro-text h3 {
+    font-weight: 400;
+    margin: 10px 0 20px;
+    color: #dcdcde;
+}
+
+.intro-text h3 span {
+    background: linear-gradient(80deg, #7afcff,#455454);
+    font-size:large;
+    padding: 0; /* Removed padding */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.btn-primary {
+    background: linear-gradient(90deg, #00d9ff, #8263ff);
+    border: none;
+    color: #fff;
+    padding: 10px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 15px rgba(0, 217, 255, 0.4);
+}
+
+/* ----- Profile Photo (Right) ----- */
+.profile-photo {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end; /* Move to the right */
+    align-items: center;
+}
+
+.profile-photo img {
+    width: 310px;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 60%;
+    padding: 5px;
+    background: linear-gradient(135deg, #00d9ff, #8263ff);
+    box-shadow: 0 0 25px rgba(0, 217, 255, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-photo img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px rgba(0, 217, 255, 0.5);
+}
+
+/* ===============================
+    SERVICES SECTION
+==================================*/
+.services {
+    padding: 80px 10%;
+    text-align: center;
+    background-color: #10172b;
+}
+
+.services h3 {
+    background: linear-gradient(90deg, #00d9ff, #8263ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.services h2 {
+    font-size: 2rem;
+    margin-bottom: 50px;
+    color: #e3e8f4;
+}
+
+/* ----- Service Boxes ----- */
+.service-boxes {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.service-card {
+    background: #151b31;
+    padding: 30px;
+    border-radius: 10px;
+    flex: 1 1 30%;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.service-card:hover {
+    background: #1e2542;
+    transform: translateY(-6px);
+    border-color: #00d9ff;
+    box-shadow: 0 0 20px rgba(0, 217, 255, 0.2);
+}
+
+/* ----- Service Icons ----- */
+.icon {
+    font-size: 2rem;
+    background: linear-gradient(90deg, #00d9ff, #8263ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 15px;
+}
+
+/* ===============================
+    FOOTER
+==================================*/
+footer {
+    background: hsl(226, 42%, 12%); /* Dark background, similar to header/sections */
+    text-align: center;
+    padding: 20px;
+    color: #8fa0c5;
+    font-size: 0.9rem;
+}
+
+/* ===============================
+    RESPONSIVE DESIGN (Tablet - 992px)
+==================================*/
+@media (max-width: 992px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .intro-text {
+        max-width: 100%;
+    }
+
+    .profile-photo {
+        justify-content: center;
+    }
+
+    .profile-photo img {
+        width: 250px;
+        height: 260px;
+    }
+
+    .service-boxes {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-card {
+        flex: 1 1 80%;
+    }
+}
+
+/* ===============================
+    RESPONSIVE DESIGN (Mobile - 768px and below)
+==================================*/
+@media (max-width: 768px) {
+    .header {
+        padding: 15px 5%; 
+    }
+
+    /* 1. Hide desktop elements */
+    .nav {
+        /* On mobile, initially hide the nav */
+        position: absolute;
+        top: 0;
+        left: -100%; /* Move it completely off-screen to the left */
+        width: 100%;
+        height: 100vh;
+        background: #11172a; 
+        transition: left 0.4s ease;
+        z-index: 99; 
+        /* Make it column for full height stacking */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .nav a {
+        font-size: 1.5rem;
+    }
+
+    .social-icons {
+        display: none; /* Hide social icons on mobile to keep nav clean */
+    }
+    
+    /* 2. Show the menu toggle button */
+    .menu-toggle {
+        display: block; /* Show the button on mobile */
+    }
+    
+    /* 3. The class applied by JavaScript to show the menu */
+    .nav.show-menu {
+        left: 0; /* Slide the menu into view */
+    }
+
+    /* 4. Hero Section Adjustments */
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 85px 5% 50px; /* Adjusted padding-top for fixed header */
+    }
+
+    .intro-text {
+        max-width: 100%;
+        order: 2; /* Text appears after photo */
+    }
+
+    .profile-photo {
+        justify-content: center;
+        margin-bottom: 30px; 
+        order: 1; /* Photo appears before text on mobile */
+    }
+
+    .profile-photo img {
+        width: 250px;
+        height: 260px;
+    }
+
+    /* 5. Services Section Adjustments */
+    .services {
+        padding: 50px 5%;
+    }
+    
+    .service-boxes {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-card {
+        flex: 1 1 100%;
+        max-width: 400px; 
+    }
+}

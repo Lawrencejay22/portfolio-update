@@ -1,0 +1,338 @@
+/* ===============================
+   GLOBAL STYLES
+==================================*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #0a0f1f;
+  color: #e3e8f4;
+  line-height: 1.6;
+}
+
+/* ===============================
+   HEADER
+==================================*/
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10%;
+  background: #11172a;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* ----- Logo ----- */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 1.6rem;
+  background: linear-gradient(90deg, #00d9ff, #8263ff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.logo img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #00d9ff;
+}
+
+/* ----- Navigation ----- */
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #cdd6f4;
+  font-weight: 400;
+  transition: color 0.3s ease;
+}
+
+.nav a:hover,
+.nav a.active {
+  color: #7afcff;
+}
+
+/* ----- Social Icons ----- */
+.social-icons ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  color: #fff;
+  background: linear-gradient(135deg, #00d9ff, #8263ff);
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 217, 255, 0.2);
+}
+
+.social-icons a:hover {
+  transform: scale(1.15) translateY(-3px);
+  box-shadow: 0 0 15px rgba(0, 217, 255, 0.5);
+  background: linear-gradient(135deg, #8263ff, #00d9ff);
+}
+
+/* ===============================
+   SKILLS SECTION
+==================================*/
+.skills-section {
+  max-width: 1100px;
+  margin: 4rem auto;
+  padding: 2.5rem;
+  background: #151b31;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 217, 255, 0.3);
+  box-shadow: 0 0 25px rgba(0, 217, 255, 0.1);
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #00d9ff, #8263ff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 2.5rem;
+}
+
+/* ----- Skill Info ----- */
+.skill {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.skill i {
+  font-size: 2.3rem;
+  background: linear-gradient(90deg, #00d9ff, #8263ff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.skill h2 {
+  margin-bottom: 0.4rem;
+  font-size: 1.3rem;
+  color: #e3e8f4;
+}
+
+.skill p {
+  color: #a4b4e0;
+  font-size: 0.95rem;
+}
+
+/* ===============================
+   GRAPH DASHBOARD
+==================================*/
+.graph-dashboard {
+  max-width: 1100px;
+  margin: 4rem auto;
+  padding: 2.5rem;
+  background: #151b31;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 217, 255, 0.3);
+  box-shadow: 0 0 25px rgba(0, 217, 255, 0.1);
+}
+
+.dashboard-title {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 600;
+  background: linear-gradient(90deg, #00d9ff, #8263ff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 2rem;
+}
+
+/* ----- Graph Grid ----- */
+.graph-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.graph-card {
+  background: #10172b;
+  border: 1px solid rgba(0, 217, 255, 0.2);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: inset 0 0 15px rgba(0, 217, 255, 0.05);
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.graph-card:nth-child(1) { animation-delay: 0.1s; }
+.graph-card:nth-child(2) { animation-delay: 0.2s; }
+.graph-card:nth-child(3) { animation-delay: 0.3s; }
+.graph-card:nth-child(4) { animation-delay: 0.4s; }
+
+.graph-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 0 30px rgba(0, 217, 255, 0.3);
+  border-color: rgba(0, 217, 255, 0.5);
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ----- Graph Bars ----- */
+.graph {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.graph span {
+  font-weight: 600;
+  color: #e3e8f4;
+}
+
+.bar {
+  background: #1c2545;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 16px;
+}
+
+.fill {
+  height: 100%;
+  border-radius: 10px;
+  transition: width 2.5s ease-out, box-shadow 0.5s ease;
+  position: relative;
+  overflow: hidden;
+  width: 0%; /* Start at 0% but allow JavaScript to override */
+}
+
+.fill::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  animation: shimmer 2.5s ease-in-out 0.5s;
+}
+
+@keyframes shimmer {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+/* ----- Enhanced Color Bars with Glow ----- */
+.red {
+  background: linear-gradient(90deg, #ff4b4b, #ff6f6f);
+  box-shadow: 0 0 15px rgba(255, 75, 75, 0.4);
+}
+
+.orange {
+  background: linear-gradient(90deg, #ffb347, #ffcc80);
+  box-shadow: 0 0 15px rgba(255, 179, 71, 0.4);
+}
+
+.lightgreen {
+  background: linear-gradient(90deg, #b2ff59, #ccff90);
+  box-shadow: 0 0 15px rgba(178, 255, 89, 0.4);
+}
+
+.green {
+  background: linear-gradient(90deg, #00c853, #69f0ae);
+  box-shadow: 0 0 15px rgba(0, 200, 83, 0.4);
+}
+
+.percent {
+  align-self: flex-end;
+  font-weight: 600;
+  color: #a4b4e0;
+}
+
+/* ===============================
+   BUTTON STYLE (For Reuse)
+==================================*/
+.btn-primary {
+  background: linear-gradient(90deg, #00d9ff, #8263ff);
+  border: none;
+  color: #fff;
+  padding: 10px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 15px rgba(0, 217, 255, 0.4);
+}
+
+/* ===============================
+   FOOTER
+==================================*/
+footer {
+  background: #11172a;
+  text-align: center;
+  padding: 20px;
+  color: #8fa0c5;
+  font-size: 0.9rem;
+}
+
+/* ===============================
+   RESPONSIVE DESIGN
+==================================*/
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .skills-section,
+  .graph-dashboard {
+    margin: 2rem 1rem;
+    padding: 1.5rem;
+  }
+
+  .skill {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
